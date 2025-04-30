@@ -8,7 +8,7 @@
   
   /* Page-specific background for results */
   body {
-    background-color: #e0f7fa; /* light teal shade */
+    background-color: #515448; /* light teal shade */
     font-family: var(--font-family);
     color: var(--text-color);
     margin: 0;
@@ -65,7 +65,7 @@
   
   .btn-container .btn {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: #1d11a2;
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 0.5rem;
@@ -76,7 +76,7 @@
   }
   
   .btn-container .btn:hover {
-    background-color: #276e27; /* darker primary */
+    background-color: #20b120; /* darker primary */
   }
   
   /* Responsive adjustments */
