@@ -1,3 +1,5 @@
+// script.js
+
 // This script handles the meal suggestion quiz and stores user responses in local storage.
 // It calculates a health score based on user input and suggests a meal accordingly.
 // It also includes meal categories based on health scores, including Kenyan and international dishes.
