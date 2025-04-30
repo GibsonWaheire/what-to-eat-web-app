@@ -1,7 +1,8 @@
 // result.js
-// Retrieve and display the suggested meal, reasons, alternatives, and user answers on result.html
+// Retrieve and display the suggested meal, reasons, alternatives, and user answers on results.html
 
 // Meal categories for reasons and alternatives
+
 const superLightMeals = [
     'Uji wa Wimbi', 'Boiled nduma', 'Pumpkin soup', 'Steamed sukuma wiki',
     'Boiled sweet potatoes', 'Managu stew', 'Cassava', 'Green smoothie',
@@ -35,6 +36,11 @@ const superLightMeals = [
   ];
   
   // Helper to shuffle an array
+    // This function takes an array as input and shuffles its elements in place.
+    // It uses the Fisher-Yates shuffle algorithm to ensure a uniform distribution of elements.
+    // The function returns the shuffled array.
+    // This is a utility function to shuffle an array in place so that we can pick two unique meals from the same category.
+
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -44,6 +50,7 @@ const superLightMeals = [
   }
   
   // Determine category and reason based on meal
+  
   function getCategoryInfo(meal) {
     if (superLightMeals.includes(meal)) {
       return {arr: superLightMeals, reason: 'it is light and detoxifying, helping your body recover'};
@@ -57,10 +64,18 @@ const superLightMeals = [
     return {arr: energyMeals, reason: 'it gives you the energy you need to power through your day'};
   }
   
+  // Helper to get two unique random picks
+  function getTwoRandom(arr) {
+    const copy = [...arr];
+    const first = copy.splice(Math.floor(Math.random() * copy.length), 1)[0];
+    const second = copy[Math.floor(Math.random() * copy.length)];
+    return [first, second];
+  }
+  
   // On DOM load, update the result page
   document.addEventListener('DOMContentLoaded', () => {
     const suggestionEl = document.getElementById('suggestion');
-    //const answersList = document.getElementById('answers-list');
+    const answersList = document.getElementById('answers-list');
   
     // Fetch stored data
     const meal = localStorage.getItem('lastMeal');
@@ -73,7 +88,7 @@ const superLightMeals = [
   
     // Get category, reason, and alternatives
     const {arr, reason} = getCategoryInfo(meal);
-    const alternatives = shuffle(arr.filter(m => m !== meal)).slice(0, 2);
+    const alternatives = getTwoRandom(arr.filter(m => m !== meal));
   
     // Build result message
     suggestionEl.innerHTML = `

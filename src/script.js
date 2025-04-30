@@ -47,18 +47,25 @@ const superLightMeals = [
     'Mandazi & chai', 'Fat cakes & chai', 'Chapati & beans + beef fry', 'Pilau & beef curry'
   ];
   
-  // Utility: pick random meal
+  // Utility: pick random meal from an array.  
 
   function randomPick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
   
   // MealQuiz constructor
+    // This constructor initializes the MealQuiz object with user answers.
+    // It takes an object with user responses as an argument.
+    // It also includes methods to calculate the score and suggest a meal based on the score.
   function MealQuiz(answers) {
     this.answers = answers;
   }
   
-  // Calculate score on prototype
+  // Calculate score on prototype- we learned that this is a better practice. 
+    // This method calculates a health score based on user input.
+    // It uses a scoring system where different answers contribute positively or negatively to the score.
+    // The method returns the final score.
+  // The scoring system is as follows:
   MealQuiz.prototype.calculateScore = function() {
     let score = 0;
     const a = this.answers;
@@ -77,6 +84,14 @@ const superLightMeals = [
   };
   
   // Suggest meal on prototype
+    // This method suggests a meal based on the calculated score.
+    // It uses a scoring system to determine which meal category to suggest.
+    // The method returns a random meal from the appropriate category.
+  // The meal suggestion is based on the following score ranges:
+  // -5 or lower: super light meals
+  // -4 to 2: light healthy meals
+  // 3 to 6: balanced meals
+  // 7 or higher: energy meals
   MealQuiz.prototype.suggestMeal = function(score) {
     if (score <= -5) return randomPick(superLightMeals);
     if (score <= 2)  return randomPick(lightHealthyMeals);
@@ -85,9 +100,16 @@ const superLightMeals = [
   };
   
   // On DOM load, attach handler
+    // This function waits for the DOM to load and then attaches an event listener to the form.
+    // When the form is submitted, it prevents the default action, collects user input,
+    // creates a MealQuiz object, calculates the score, suggests a meal, and stores the data in local storage.
+    // Finally, it redirects to the results page.
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('meal-quiz');
     if (!form) return;
+    // Attach event listener to form submission
+    // This event listener prevents the default form submission behavior,
+    // collects user input, creates a MealQuiz object, calculates the score,
   
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -98,7 +120,9 @@ const superLightMeals = [
         fried:      data.get('fried'),
         activity:   data.get('activity'),
         hungry:     data.get('hungry')
-      };
+      }; // Collect user input
+      // Create a new MealQuiz object with the collected answers
+      // Calculate the score based on user input
       const quiz = new MealQuiz(answers);
       const score = quiz.calculateScore();
       const meal  = quiz.suggestMeal(score);
@@ -107,4 +131,4 @@ const superLightMeals = [
       window.location.href = 'results.html';
     });
   });
-  
+  // End of DOM load event

@@ -1,6 +1,5 @@
 /* styles.css */
 
-
 :root {
   --primary-color: #2e7d32;
   --accent-color: #f9a825;
@@ -88,7 +87,7 @@ body {
 }
 
 .btn-container .btn:hover {
-  background-color: #d48806; /* slightly darker accent */
+  background-color: #d48806; /
 }
 
 /* Footer */
@@ -133,6 +132,7 @@ body {
 }
 
 /* Responsive */
+
 @media (max-width: 768px) {
   .nav-wrapper nav ul {
     flex-direction: column;
