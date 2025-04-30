@@ -1,4 +1,4 @@
-# What Should I Eat web App?
+# What Should I Eat?
 #### A functional web application that helps users choose a healthy Kenyan meal based on their recent eating habits., April 30, 2025
 #### By **Gibson Waheire**
 
@@ -14,8 +14,13 @@ This web application guides users through a quick quiz to assess their recent ea
 - **Persistence**: Stores user responses and results in `localStorage`.
 - **Responsive Design**: Optimized for mobile, tablet, and desktop.
 
+## Live Demo
+Deployed site: https://gibsonwaheire.github.io/what-to-eat-web-app/
+
 ## Setup / Installation Requirements
-* Clone the repository: `git clone https://github.com/GibsonWaheire/what-to-eat-web-app.git`
+* Clone the repository:  
+  ```bash
+  git clone https://github.com/GibsonWaheire/what-to-eat-web-app.git 
 * Navigate into the project directory: `cd what-to-eat-web-app`
 * No dependencies—this is a static site. Simply open `index.html` in your browser.
 * Ensure your browser allows JavaScript and localStorage.
