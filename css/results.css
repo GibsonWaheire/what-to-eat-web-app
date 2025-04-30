@@ -1,0 +1,91 @@
+/* result.css */
+
+/* Header & Navigation (same as global) */
+.header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  .nav-wrapper nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  .nav-wrapper nav ul li {
+    margin: 0 1rem;
+  }
+  
+  .nav-wrapper nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .nav-wrapper nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Center and style the suggestion container */
+  .main-content .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  /* Suggestion box styling */
+  #suggestion {
+    background-color: #fafafa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  /* Answers list styling */
+  #answers-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  #answers-list li {
+    background-color: #fff;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #e0e0e0;
+  }
+  
+  
+  .btn-container {
+    margin-top: 1.5rem;
+  }
+  
+  .btn-container .btn {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  
+
+  @media (max-width: 600px) {
+    #suggestion, #answers-list {
+      padding: 1rem;
+      margin: 0.5rem;
+      max-width: 100%;
+    }
+  }
