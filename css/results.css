@@ -1,36 +1,24 @@
 /* result.css */
 
-/* Header & Navigation (same as global) */
+/* Hide header/nav on results page */
+
 .header {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 1rem 0;
+    display: none;
   }
   
-  .nav-wrapper nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+  /* Page-specific background for results */
+  body {
+    background-color: #e0f7fa; /* light teal shade */
+    font-family: var(--font-family);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
   }
   
-  .nav-wrapper nav ul li {
-    margin: 0 1rem;
-  }
-  
-  .nav-wrapper nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .nav-wrapper nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Container */
+  /* Container styling */
   .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: auto;
   }
   
@@ -40,18 +28,17 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem 1rem;
   }
   
   /* Suggestion box styling */
   #suggestion {
-    background-color: #fafafa;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    max-width: 600px;
-    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 100%;
   }
   
   /* Answers list styling */
@@ -59,33 +46,47 @@
     list-style: none;
     padding: 0;
     margin-bottom: 2rem;
-    max-width: 400px;
     width: 100%;
   }
   
   #answers-list li {
-    background-color: #fff;
+    background-color: #fafafa;
     margin: 0.5rem 0;
-    padding: 0.75rem;
-    border-radius: 0.25rem;
-    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: left;
   }
   
-  
+  /* Retake button styling */
   .btn-container {
     margin-top: 1.5rem;
   }
   
   .btn-container .btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
     padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease;
   }
   
+  .btn-container .btn:hover {
+    background-color: #276e27; /* darker primary */
+  }
   
-
+  /* Responsive adjustments */
   @media (max-width: 600px) {
-    #suggestion, #answers-list {
+    .main-content .container {
+      padding: 2rem 0.5rem;
+    }
+  
+    #suggestion, #answers-list li {
       padding: 1rem;
-      margin: 0.5rem;
-      max-width: 100%;
     }
   }
+  
